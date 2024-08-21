@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --text: hsl(256, 16%, 87%);
+    --secandry :hsl(257, 14%, 38%);
+    --acsent: hsl(257, 18%, 23%);
+    --background: hsl(258, 22%, 18%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
+body{
+    background-color: var(--background);
+}
+.navbar-brand {
+    color: var(--background);
+    font-size: 30px;
+}
+.search-box{
+    background-color: var(--white);
+}
+#seacrchBtn{
+    color: var(--background) !important;
+    border-color: var(--background) !important;
+}
+#seacrchBtn:hover{
+    background-color: var(--background) !important; 
+    color: var(--white) !important;
+}
+.look{
+    max-width: 500px;
+    margin: auto;
+}
+.weahter-card{
+    background-color: var(--white);
+}
+.weather-card-footer > div{
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    height: 30px;
+    /* padding: 0px 5px; */
+}
+.weather-card-footer div p{
+    width: auto;
+}
+.weather-card-footer .img-box{
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-card-footer .img-box img{
+    width: 100%;
+}
+.main-weather-img img{
+    width: 100%;
+}
+.main-temp{
+    font-size: 85px;
+}
+.max-temp{
+    font-size: 75px;
+}
+.min-temp{
+    font-size: 45px;
+}
+.min-icon{
+    width: 40px;
+}

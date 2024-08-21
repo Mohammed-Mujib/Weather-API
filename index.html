@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather API</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle">
+        <div class="container ">
+            <a class="navbar-brand " href="#">WeatherForcast</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Live Cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container ">
+        <div class="look my-5">
+            <div class="mb-2 d-flex search-box p-3 rounded-pill">
+                <input class="form-control rounded-start-pill me-0" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-success ms-0 rounded-start-0 rounded-end-pill" type="submit" id="seacrchBtn">Search</button>
+            </div>
+            <div class="alert alert-danger d-none" role="alert" id="cityAlert">
+                please enter a valid city name
+            </div>
+        </div>
+        
+        
+        <section class="days">
+            <div class="row mt-5 g-4">
+                <!-- <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+                    <div class="weahter-card h-100  first position-relative rounded p-3" id="day1">
+                        <div class="card-header d-sm-flex justify-content-between border-bottom" id="day1Header">
+                            <p class="day-text">Monday</p> <p class="day-date">20 May</p>
+                        </div>
+                        <div class="weather-card-body" id="day1Body">
+                            <h3 class="city">Cairo</h3>
+                            <div class="row g-2  py-3">
+                                <div class="col-6">
+                                    <div class=" d-flex align-content-center justify-content-center">
+                                        <h2 class="main-temp">36</h2>
+                                        <div class="img-celsius d-flex align-items-center">
+                                            <img src="images/celsius_fill_icon.png" alt="" class="w-75">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="main-weather-img">
+                                        <img src="images/weather_day_sun_icon.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Partly Cloudy</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weather-card-footer d-flex justify-content-between border-top pt-3" id="day1Footer">
+                            <div class="weather-footer-info border-end">
+                                <div class="img-box">
+                                    <img src="images/cloud_heavy_rain_weather_icon.png" alt="" style="width: 30px;">
+                                </div>
+                                <p class="rain">88%</p>
+                            </div>
+                            <div class="weather-footer-info border-end px-1">
+                                <div class="img-box">
+                                    <img src="images/wind_windy_weather_icon.png" alt="" style="width: 30px;">
+                                </div>
+                                <p class="wind-speed">16 km/h</p>
+                            </div>
+                            <div class="weather-footer-info">
+                                <div class="img-box">
+                                    <img src="images/boussole_compass_navigation_orientation_icon.png" alt="" style="width: 30px;">
+                                </div>
+                                <p id="wind-diraction">south-southwest wind</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+                    <div class="weahter-card h-100  first position-relative rounded p-3" id="day1">
+                        <div class="card-header d-sm-flex justify-content-between border-bottom" id="day1Header">
+                            
+                        </div>
+                        <div class="weather-card-body" id="day1Body">
+                            
+                        </div>
+                        <div class="weather-card-footer d-flex justify-content-between border-top py-3" id="day1Footer">
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+                    <div class="weahter-card h-100  first position-relative rounded p-3" id="day2">
+                        <div class="card-header d-sm-flex justify-content-between border-bottom" id="day2Header">
+                        </div>
+                        <div class="weahter-card-body" id="day2Body">
+    
+                        </div>
+                        <div class="weather-card-footer d-flex justify-content-between border-top py-3" id="day2Footer">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+                    <div class="weahter-card h-100  first position-relative rounded p-3" id="day3">
+                        <div class="card-header d-sm-flex justify-content-between border-bottom" id="day3Header">
+                        </div>
+                        <div class="weahter-card-body" id="day3Body">
+    
+                        </div>
+                        <div class="weather-card-footer d-flex justify-content-between border-top py-3" id="day3Footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
