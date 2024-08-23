@@ -288,3 +288,94 @@
     "icon": 395
     }
     ]
+    Newicon(data.current.condition.code,data.current.is_day)
+    function Newicon(code,is_day) {
+        let dayIcons = [
+            {
+                code:1000,
+                icon:"weather_day_sun_icon.png"
+            },
+            {
+                code:1003,
+                icon:"weather_day_cloud_cloudy_sky_icon.png"
+            },
+            {
+                code:1006,
+                icon:"cloud_overcast_weather_icon.png"
+            },
+            {
+                code:1009,
+                icon:"cloud_clouds_overcast_weather_icon.png"
+            },
+            {
+                code:1030,
+                icon:"weather_mist_foggy_cloud_icon.png"
+            },
+            {
+                code:1063,
+                icon:"cloud_rain_shine_sun_weather_icon.png"
+            },
+            {
+                code:1066,
+                icon:"cloud_cloudy_forecast_mild rain_sun_icon.png"
+            },
+            {
+                code:1069,
+                icon:"cloud_cloudy_forecast_mild rain_sun_icon.png"
+            },
+            
+        ]
+        let nigthIcons = []
+        let iconSrc = "";
+        if (is_day == 1) {
+            for (let i = 1000; i < dayIcons.length; i++) {
+                if (dayIcons[i].code == code) {
+                    iconSrc = dayIcons.icon;
+                    break;
+                }
+            }
+            // switch (code) {
+            //     case 1000:
+            //         iconSrc = "weather_day_sun_icon.png";
+            //         break;
+            //     case 1003:
+            //         iconSrc = "weather_day_cloud_cloudy_sky_icon.png";
+            //         break;
+            //     case 1006:
+            //         iconSrc = "weather_cloud_cloudy_sky_icon.png";
+            //         break;
+            //     case 1009:
+            //         iconSrc = "weather_cloud_cloudy_sky_icon.png";
+            //         break;
+                    
+            //     default:
+            //         break;
+            // }
+        } else {
+            for (let i = 1000; i < dayIcons.length; i++) {
+                if (dayIcons[i].code == code) {
+                    iconSrc = dayIcons.icon;
+                    break;
+                }
+            }
+            switch (code) {
+                case 1000:
+                    iconSrc = "weather_moon_regular_icon.png";
+                    break;
+                case 1003:
+                    iconSrc = "weather_night_cloud_cloudy_sky_icon.png";
+                    break;
+                case 1006:
+                    iconSrc = "weather_cloud_cloudy_sky_icon.png";
+                    break;
+                case 1009:
+                    iconSrc = "weather_cloud_cloudy_sky_icon.png";
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        
+        return iconSrc;
+    }
